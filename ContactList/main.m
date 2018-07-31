@@ -7,11 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "InputCollector.h"
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        BOOL running = true;
+        
+        while (running){
+        NSString *userInput = [InputCollector inputForPrompt:@">"];
+            NSLog(@"%@",userInput);
+            
+            if([userInput isEqualToString:@"quit"]){
+            NSLog(@"Goodbye!");
+            running = false;
+            continue;
+            }
+        }
     }
     return 0;
 }
