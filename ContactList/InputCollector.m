@@ -14,16 +14,15 @@
     
     char userInput[255];
     
-    NSLog(@"\nWhat would you like do next? \nnew - Create a new contact \nlist - List all contacts \nquit - Exit Application ");
-    
     NSLog(@"\n%@",promptString);
     
     fgets(userInput,255,stdin);
     
-    NSString *username = [[NSString alloc] initWithCString:userInput encoding:NSUTF8StringEncoding];
-    username = [username stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *input = [[NSString alloc] initWithCString:userInput encoding:NSUTF8StringEncoding];
+    input = [input stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
-    return username;
+    
+    return input;
     
 }
 
