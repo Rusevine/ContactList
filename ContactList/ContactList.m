@@ -18,6 +18,14 @@
 }
 
 -(void)addContact:(Contacts *)newContact{
-    [self.contactList addObject:newContact.fullName];
+    [self.contactList addObject:newContact];
+}
+
+-(void)contactIndex {
+    
+    for (int i = 0; i < [self.contactList count]; i++){
+        Contacts *contact = [self.contactList objectAtIndex:i];
+        NSLog(@"%d: %@ (%@)",i,contact.fullName,contact.email);
+    }
 }
 @end

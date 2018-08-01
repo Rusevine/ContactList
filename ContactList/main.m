@@ -28,6 +28,8 @@ int main(int argc, const char * argv[]) {
                 NSString *email = [InputCollector inputForPrompt:@"Enter e-mail: "];
                 Contacts *contact = [[Contacts alloc] initWithName:fullName email:email];
                 [contactList1 addContact:contact];
+             } else if ([userInput isEqualToString:@"list"]){
+                 [contactList1 contactIndex];
              } else if([userInput isEqualToString:@"quit"]){
                  NSLog(@"Goodbye!");
                  running = false;
